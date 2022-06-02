@@ -1,12 +1,8 @@
-import os
 import pandas as pd
 import geopandas as gpd
 
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-from plotly.offline import iplot, init_notebook_mode
-#pio.renderers.default = "notebook_connected"
 px.set_mapbox_access_token("pk.eyJ1IjoibWF0dGhld2pwYXluZSIsImEiOiJjbDN1NTk5dnEwZmVxM2VudnhmcWwwZm5yIn0.kT-2SV7qYLBV382pQJFtUw")
 
 import streamlit as st
@@ -14,10 +10,7 @@ st.set_page_config(layout="wide")
 
 @st.cache
 def graphing():
-    directory = r'C:\Users\matth\Google Drive\chapters_data\promotion\forest_regression\quadrat_method\draft_7\25km2\python_outputs'
-    os.chdir(directory)
-
-
+    
     palm = pd.read_csv("palm_areaYear2001-2015_timeseries_quadrat_25km2.csv")
     deforest = pd.read_csv("gfw_deforestation_with_distance_Year2001-2015_timeseries_quadrat_25km2.csv")
 
@@ -61,8 +54,6 @@ def graphing():
 @st.cache
 def deforestation_function():
     # incorporating polygonal data into streamlit
-    directory = r'C:\Users\matth\Google Drive\chapters_data\promotion\forest_regression\quadrat_method\draft_7\25km2'
-    os.chdir(directory)
     deforestation = gpd.read_file("deforestation_nonpalm.shp")
     deforestation = deforestation.to_crs(4326)
     loss = px.choropleth_mapbox(deforestation,
@@ -84,8 +75,6 @@ def deforestation_function():
 
 @st.cache
 def expansion_function():
-    directory = r'C:\Users\matth\Google Drive\chapters_data\promotion\forest_regression\quadrat_method\draft_7\25km2'
-    os.chdir(directory)
     plantations = gpd.read_file("plantations_aged_mapped.shp")
     plantations = plantations.to_crs(4326)
 
