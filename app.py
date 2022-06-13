@@ -112,11 +112,13 @@ def expansion_function():
 # build streamlit dashboard
 
 st.title("Visualising oil palm expansion and testing for promoted non-oil palm deforestation, in a study area of the Central Peruvian Amazon")
-st.sidebar.title("Welcome to this interactive visualisation!")
-st.sidebar.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).")
-st.sidebar.markdown("**Research context:**  \n I am interested in whether the expansion of oil palm promotes an indirect land-use change in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.")
-st.sidebar.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!")
-st.sidebar.markdown("*I'll be sure to add more functionality to this dashboard in the future!*")
+st.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).  \n  \n **Research context:**  \n I am interested in whether the expansion of oil palm promotes an indirect land-use change in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.  \n  \n Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!  \n *I'll be sure to add more functionality to this dashboard in the future!*")
+
+# #st.sidebar.title("Welcome to this interactive visualisation!")
+# st.sidebar.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).")
+# st.sidebar.markdown("**Research context:**  \n I am interested in whether the expansion of oil palm promotes an indirect land-use change in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.")
+#st.sidebar.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!")
+#st.sidebar.markdown("*I'll be sure to add more functionality to this dashboard in the future!*")
 
 #deforestation_chart, plantation_expansion_chart = mapping()
 #graph = graphing() 
