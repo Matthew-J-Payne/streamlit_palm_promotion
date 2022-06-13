@@ -42,7 +42,7 @@ def graphing():
                     paper_bgcolor='rgba(0,0,0,0)',
                     plot_bgcolor='rgba(0,0,0,0)',
                     height = 600,
-                    width = 1200,
+                    width = 800,
                     font = dict(family = "Helvetica", color = "Black", size = 16),
                     legend = dict(orientation = "h", x = 0.20, y = -0.15),
                     autosize = True
