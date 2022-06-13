@@ -134,6 +134,7 @@ with column2:
     st.header("Oil palm expansion 2000 - 2015")
     st.markdown("...and this is oil palm delineated using photo-interpretation and age estimated")
     st.write("")
+    st.write("") # padding for subplot placement
     st.plotly_chart(expansion_function())
 
 # column3 = st.columns(1)
