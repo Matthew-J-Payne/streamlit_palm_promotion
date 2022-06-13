@@ -65,8 +65,8 @@ def deforestation_function():
                                     mapbox_style = "satellite-streets",
                                     labels = {"year": "Year of forest loss"},
                                     zoom = 11,
-                                    width = 600,
-                                    height = 500
+                                    width = 400,
+                                    height = 400
                                     )
     loss.update_traces(marker_line_width = 0)
     #loss.update_layout(title_text = "Deforestation across the study area")
@@ -89,8 +89,8 @@ def expansion_function():
                                         mapbox_style = "satellite-streets",
                                         labels = {"year_plant": "Year Planted"},
                                         zoom = 10,
-                                        width = 600,
-                                        height = 500)
+                                        width = 400,
+                                        height = 400)
     expansion.update_traces(marker_line_width = 0)
 
     # # Modify tooltip
@@ -127,12 +127,12 @@ column1, column2 = st.columns(2)
 
 with column1:
     st.header("Non palm deforestation 2000 - 2015")
-    st.write("This is deforestation derived from the Global Forest Watch dataset from Hansen et al., (2013).  \n Source: Hansen/UMD/Google/USGS/NASA")
+    st.write("This is deforestation derived from the Global Forest Watch dataset from Hansen et al., (2013).  \n **Source: Hansen/UMD/Google/USGS/NASA**")
     st.plotly_chart(deforestation_function())
 
 with column2:
     st.header("Oil palm expansion 2000 - 2015")
-    st.markdown("...and this is oil palm delineated using photo-interpretation and age estimated using in-field palm age data.  \n Source: (Malaga *et al.,* 2020) ")
+    st.markdown("...and this is oil palm delineated using photo-interpretation and age estimated")
     st.plotly_chart(expansion_function())
 
 # column3 = st.columns(1)
@@ -142,8 +142,8 @@ with column2:
 with st.expander("Click here for the deforestation data source"):
     st.markdown("Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice, and J. R. G. Townshend. 2013. “High-Resolution Global Maps of 21st-Century Forest Cover Change.” Science 342 (15 November): 850–53. Data available on-line from: http://earthenginepartners.appspot.com/science-2013-global-forest. ")
 
-with st.expander("Click here for the age estimation data source"):
-    st.markdown("Málaga, N., Hergoualc’h, K., Kapp, G. et al. Variation in Vegetation and Ecosystem Carbon Stock Due to the Conversion of Disturbed Forest to Oil Palm Plantation in Peruvian Amazonia. Ecosystems 24, 351–369 (2021). Data available on-line from https://data.cifor.org/dataset.xhtml?persistentId=doi:10.17528/CIFOR/DATA.00196")
+# with st.expander("Click here for the age estimation data source"):
+#     st.markdown("Málaga, N., Hergoualc’h, K., Kapp, G. et al. Variation in Vegetation and Ecosystem Carbon Stock Due to the Conversion of Disturbed Forest to Oil Palm Plantation in Peruvian Amazonia. Ecosystems 24, 351–369 (2021). Data available on-line from https://data.cifor.org/dataset.xhtml?persistentId=doi:10.17528/CIFOR/DATA.00196")
 
 st.header("Oil palm expansion and non-oil palm deforestation across the study area in the above maps")
 st.write("From the graph below, it looks like there *isn't* a statistically valid relationship between oil palm and the non-palm deforestation in the map, and true there isn't.  \n *...across the whole area in the same year.*  \n Step in spatially-fixed and time-fixed effects panel regression, which can account for spatial and temporal variation in deforestation response.  \n And that's it, for now. I'm intentionally withholding the model and plots until they are published in an academic paper.")
