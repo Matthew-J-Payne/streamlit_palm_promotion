@@ -45,6 +45,7 @@ def graphing():
                     width = 800,
                     font = dict(family = "Helvetica", color = "Black", size = 16),
                     legend = dict(orientation = "h", x = 0.20, y = -0.15),
+                    #title = "Oil palm expansion and non-oil palm deforestation across the study site",
                     autosize = True
                     )
     fig = go.Figure(data = combined, layout = layout)
@@ -112,7 +113,11 @@ def expansion_function():
 # build streamlit dashboard
 
 st.title("Visualising oil palm expansion and testing for promoted non-oil palm deforestation, in a study area of the Central Peruvian Amazon")
-st.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).  \n  \n **Research context:**  \n I am interested in whether the expansion of oil palm promotes an indirect land-use change in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.  \n  \n Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!  \n *I'll be sure to add more functionality to this dashboard in the future!*")
+
+with st.expander("Click here for contact details"):
+    st.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!  \n *I'll be sure to add more functionality to this dashboard in the future!*")
+    
+st.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).  \n  \n **Research context:**  \n I am interested in whether the expansion of oil palm promotes an indirect land-use change in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.")
 
 # #st.sidebar.title("Welcome to this interactive visualisation!")
 # st.sidebar.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).")
@@ -150,4 +155,5 @@ with st.expander("Click here for the deforestation data source"):
 st.header("Oil palm expansion and non-oil palm deforestation across the study area in the above maps")
 st.write("From the graph below, it looks like there *isn't* a statistically valid relationship between oil palm and the non-palm deforestation in the map, and true there isn't.  \n *...across the whole area in the same year.*  \n Step in spatially-fixed and time-fixed effects panel regression, which can account for spatial and temporal variation in deforestation response.  \n And that's it, for now. I'm intentionally withholding the model and plots until they are published in an academic paper.")
 st.caption("*As a side note - I hope to code a way for this graph to poll the bounds of the above maps and reflect the values within.*")
+#st.subheader("Oil palm expansion and non-oil palm deforestation across the study site")
 st.plotly_chart(graphing())
