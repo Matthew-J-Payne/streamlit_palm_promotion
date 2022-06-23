@@ -116,17 +116,9 @@ st.title("Visualising oil palm expansion and testing for promoted non-oil palm d
 
 with st.expander("Click here for contact details"):
     st.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!  \n *I'll be sure to add more functionality to this dashboard in the future!*")
-    
+
 st.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).  \n  \n **Research context:**  \n I am interested in whether the expansion of oil palm promotes an indirect land-use change in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.")
 
-# #st.sidebar.title("Welcome to this interactive visualisation!")
-# st.sidebar.markdown("**Some contextual information about the dashboard**:  \n The following data are some outputs from my PhD thesis, I wanted a way to interactively share my work and I achieved this using the streamlit Python library, a dashboard library that is much more intuitive than Dash (sorry Plotly).")
-# st.sidebar.markdown("**Research context:**  \n I am interested in whether the expansion of oil palm promotes an indirect land-use change in the surrounding area, which is why the deforestation does not include forest that was cleared for oil palm development.")
-#st.sidebar.markdown("Contact me at matthewjpayne1@gmail.com, if you're interested in collaborations or just want to chat!")
-#st.sidebar.markdown("*I'll be sure to add more functionality to this dashboard in the future!*")
-
-#deforestation_chart, plantation_expansion_chart = mapping()
-#graph = graphing() 
 
 column1, column2 = st.columns(2)
 
@@ -142,9 +134,6 @@ with column2:
     st.write("") # padding for subplot placement
     st.plotly_chart(expansion_function())
 
-# column3 = st.columns(1)
-# with column3:
-#     st.plotly_chart(graphing())
 
 with st.expander("Click here for the deforestation data source"):
     st.markdown("Hansen, M. C., P. V. Potapov, R. Moore, M. Hancher, S. A. Turubanova, A. Tyukavina, D. Thau, S. V. Stehman, S. J. Goetz, T. R. Loveland, A. Kommareddy, A. Egorov, L. Chini, C. O. Justice, and J. R. G. Townshend. 2013. “High-Resolution Global Maps of 21st-Century Forest Cover Change.” Science 342 (15 November): 850–53. Data available on-line from: http://earthenginepartners.appspot.com/science-2013-global-forest. ")
